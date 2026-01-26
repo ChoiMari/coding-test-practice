@@ -6,6 +6,6 @@ public class Main{
         sb.append("( 0 )\"\"\"\\\n");
         sb.append("|\"^\"`    |\n");
         sb.append("||_/=\\\\__|\n");
-        System.out.println(sb);
+        System.out.print(sb);
     }
 }
