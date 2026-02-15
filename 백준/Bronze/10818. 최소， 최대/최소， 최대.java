@@ -1,24 +1,21 @@
 import java.io.*;
+import java.util.*;
 public class Main{
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        String[] str = br.readLine().split("\\s+");
-        int[] numbers = new int[n];
-        
-        for(int i = 0;i < n;i++){
-            numbers[i] = Integer.parseInt(str[i]);
-        }
-        
-        int min = numbers[0];
-        int max = numbers[0];
-        for(int num : numbers){
-            if(num < min){
-                min = num;
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int first = Integer.parseInt(st.nextToken());
+        int min = first;
+        int max = first;
+        for(int i = 1;i < n;i++){
+            // 1개는 먼저 읽어서 1부터 시작함
+            int number = Integer.parseInt(st.nextToken());
+            if(number < min){
+                min = number;
             }
-            
-            if(num > max){
-                max = num;
+            if(number > max){
+                max = number;
             }
         }
         System.out.printf("%d %d", min, max);
