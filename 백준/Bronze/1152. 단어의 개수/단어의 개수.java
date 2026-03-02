@@ -1,13 +1,15 @@
 import java.io.*;
+import java.util.*;
 public class Main{
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String input = br.readLine().trim();
-        int result = 0;
-        if(!input.isEmpty()){
-            result = input.split("\\s+").length;
+        StringTokenizer st = new StringTokenizer(br.readLine().trim());
+        int count = 0;
+        while(st.hasMoreTokens()){
+            st.nextToken();
+            count++;
         }
-        System.out.println(result);
+        System.out.println(count);
         br.close();
     }
 }
