@@ -4,19 +4,15 @@ public class Main{
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        StringBuilder sb1 = new StringBuilder();
-        StringBuilder sb2 = new StringBuilder();
+      
+        int a = reverseNumber(st.nextToken());
+        int b = reverseNumber(st.nextToken());
         
-        String str1 = st.nextToken();
-        String str2 = st.nextToken();
-                                                
-        for(int i = 2;i >= 0;i--){
-            sb1.append(str1.charAt(i));
-            sb2.append(str2.charAt(i));
-        }
-        
-        int a = Integer.parseInt(sb1.toString());
-        int b = Integer.parseInt(sb2.toString());
-        System.out.println((a > b) ? a : b);
+        System.out.println(Math.max(a, b));
+        br.close();
+    }
+    
+    private static int reverseNumber(String str){
+        return Integer.parseInt(new StringBuilder(str).reverse().toString());
     }
 }
